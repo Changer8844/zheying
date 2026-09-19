@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#e9e9e5">
-  <meta name="description" content="折影，一间纸做的梦。移动纸片，寻找留白，展开房间里的七个秘密。">
-  <title>折影 · 简易版</title>
+  <meta name="description" content="折影，一间纸做的梦。十四道原创视觉谜题，展开房间，寻找藏在空白里的出口。">
+  <title>折影 · 扩展版</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23252524' d='M8 8h32l16 16v32H8z'/%3E%3Cpath fill='%23eee' d='M40 8v16h16M18 39l13 4 12-16-4 21-8-5-6 10z'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css">
-  <script src="logic.js" defer></script>
-  <script src="game.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=2.0.0">
+  <script src="expansion-logic.js?v=2.0.0" defer></script>
+  <script src="logic.js?v=2.0.0" defer></script>
+  <script src="expansion-art.js?v=2.0.0" defer></script>
+  <script src="audio.js?v=2.0.0" defer></script>
+  <script src="game.js?v=2.0.0" defer></script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -18,9 +21,9 @@
     <div class="top-actions"><span id="chapter-label">一间纸做的梦</span><button id="sound" class="quiet" aria-label="关闭声音">声音 <span>开</span></button><button id="menu" class="icon-button" aria-label="打开菜单"><span></span><span></span></button></div>
   </header>
   <main id="game">
-    <div id="scene-heading" hidden><button id="back" class="quiet">↶ <span>房间</span></button><div><span id="scene-index"></span><h1 id="scene-title"></h1></div><div class="puzzle-tools"><button id="reset" class="quiet">重置</button><button id="hint" class="quiet">一点提示 <span class="hint-icon">?</span></button></div></div>
+    <div id="scene-heading" hidden><button id="back" class="quiet">↶ <span>房间</span></button><div><span id="scene-index"></span><h1 id="scene-title"></h1></div><div class="puzzle-tools"><button id="undo" class="quiet" hidden>撤回</button><button id="reset" class="quiet">重置</button><button id="hint" class="quiet">一点提示 <span class="hint-icon">?</span></button></div></div>
     <div id="stage-wrap"><svg id="stage" viewBox="0 0 1200 740" role="group" aria-label="折影的纸房间"></svg>
-      <section id="intro"><p class="eyebrow">A QUIET LITTLE PUZZLE</p><h1>折<span>影</span></h1><p class="intro-line">有些答案，藏在空白里。</p><button id="start" class="enter">走进这间房 <span>↗</span></button><p class="intro-note">简易版 v1.0.0 · 七道谜题</p></section>
+      <section id="intro"><p class="eyebrow">A QUIET LITTLE PUZZLE</p><h1>折<span>影</span></h1><p class="intro-line">有些答案，藏在空白里。</p><button id="start" class="enter">走进这间房 <span>↗</span></button><p class="intro-note">扩展版 v2.0.0 · 十四道谜题</p></section>
       <section id="ending" hidden><p class="eyebrow">THE OTHER SIDE OF THE PAPER</p><h1>原来，<br>窗外一直有风。</h1><p>你展开了一间房，也放走了它的影子。</p><button id="ending-room" class="enter">再看一眼 <span>↗</span></button><button id="restart-end" class="quiet">重新做这个梦</button></section>
     </div>
     <div id="scene-caption" aria-live="polite"></div>
